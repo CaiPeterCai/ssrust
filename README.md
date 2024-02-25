@@ -6,7 +6,7 @@
 运行脚本：
 
 ```
-wget https://raw.githubusercontent.com/yeahwu/v2ray-wss/main/tcp-wss.sh && bash tcp-wss.sh
+bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/ss-rust.sh)
 ```
 
 **便宜VPS推荐：** https://hostalk.net/deals.html
