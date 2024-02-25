@@ -77,7 +77,7 @@ cat >/etc/shadowsocks/config.json<<EOF
     "server_port":$ssport,
     "password":"$sspasswd",
     "mode": "tcp_and_udp",
-    "method":"chacha20-ietf-poly1305"
+    "method":"chacha20-ietf-poly1305",
     "fast_open":false
 }
 EOF
