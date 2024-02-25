@@ -9,10 +9,6 @@
 bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/ss-rust.sh)
 ```
 
-**便宜VPS推荐：** https://hostalk.net/deals.html
-
-![image](https://github.com/yeahwu/v2ray-wss/assets/13328328/3868c3be-ad75-4046-a628-4df52c50c7b2)
-
 已测试系统如下：
 
 Debian 9, 10, 11
