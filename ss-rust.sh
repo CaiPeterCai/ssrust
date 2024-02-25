@@ -1,5 +1,4 @@
 #!/bin/sh
-# forum: https://1024.day
 
 if [[ $EUID -ne 0 ]]; then
     clear
@@ -7,9 +6,8 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-timedatectl set-timezone Asia/Shanghai
-sspasswd=$(cat /proc/sys/kernel/random/uuid)
-ssport=$(shuf -i 2000-65000 -n 1)
+sspasswd=$(cat <(openssl rand -base64 19))
+ssport=$(shuf -i 1024-65535 -n 1)
 
 getIP(){
     local serverIP=
@@ -21,9 +19,9 @@ getIP(){
 }
 
 install_UP(){
-    if [ -f "/usr/bin/apt-get" ];then
-        apt-get update && apt-get upgrade -y
-        apt-get install gzip wget curl unzip xz-utils jq -y
+    if [ -f "/usr/bin/apt" ];then
+        sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+        sudo apt install gzip wget curl unzip xz-utils jq -y
     else
         yum update && yum upgrade -y
         yum install epel-release -y
@@ -78,9 +76,9 @@ cat >/etc/shadowsocks/config.json<<EOF
     "server": "::",
     "server_port":$ssport,
     "password":"$sspasswd",
-    "timeout":600,
     "mode": "tcp_and_udp",
-    "method":"aes-128-gcm"
+    "method":"chacha20-ietf-poly1305"
+    "fast_open":false
 }
 EOF
 
@@ -104,7 +102,7 @@ EOF
 }
 
 client_SS(){
-    sslink=$(echo -n "aes-128-gcm:${sspasswd}@$(getIP):${ssport}" | base64 -w 0)
+    sslink=$(echo -n "chacha20-ietf-poly1305:${sspasswd}@$(getIP):${ssport}" | base64 -w 0)
 
     echo
     echo "安装已经完成"
@@ -113,7 +111,7 @@ client_SS(){
     echo "地址：$(getIP)"
     echo "端口：${ssport}"
     echo "密码：${sspasswd}"
-    echo "加密方式：aes-128-gcm"
+    echo "加密方式：chacha20-ietf-poly1305"
     echo "传输协议：tcp+udp"
     echo "========================================="
     echo "ss://${sslink}"
