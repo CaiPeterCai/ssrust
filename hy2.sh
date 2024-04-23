@@ -1,5 +1,4 @@
 #!/bin/sh
-# forum: https://1024.day
 
 if [[ $EUID -ne 0 ]]; then
     clear
@@ -7,9 +6,8 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-timedatectl set-timezone Asia/Shanghai
-hyPasswd=$(cat /proc/sys/kernel/random/uuid)
-getPort=$(shuf -i 2000-65000 -n 1)
+hyPasswd=$(cat <(openssl rand -base64 19))
+getPort=$(shuf -i 1024-65000 -n 1)
 
 getIP(){
     local serverIP=
@@ -22,8 +20,8 @@ getIP(){
 
 install_hy2(){
     if [ -f "/usr/bin/apt-get" ]; then
-        apt-get update -y && apt-get upgrade -y
-        apt-get install -y gawk curl
+        sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+        sudo apt install -y gawk curl
     else
         yum update -y && yum upgrade -y
         yum install -y epel-release
@@ -56,7 +54,7 @@ quic:
 EOF
 
 systemctl enable hysteria-server.service && systemctl restart hysteria-server.service && systemctl status --no-pager hysteria-server.service
-rm -f tcp-wss.sh hy2.sh
+rm -f hy2.sh
 
 }
 
