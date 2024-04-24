@@ -40,15 +40,16 @@ read subnet
 echo -n "$(prompt count)"
 read count
 
-# Add or update dhcp4 and dhcp6 settings
-sudo sed -i '/dhcp4:/d' $CONFIG_FILE  # Remove existing dhcp4 line if any
-sudo sed -i '/set-name: enp3s0/a \ \ \ \ \ \ \ \ dhcp4: true' $CONFIG_FILE  # Add dhcp4: true
-sudo sed -i '/dhcp6:/d' $CONFIG_FILE  # Remove existing dhcp6 line if any
-sudo sed -i '/dhcp4: true/a \ \ \ \ \ \ \ \ dhcp6: false' $CONFIG_FILE  # Add dhcp6: false
+# Ensure dhcp4 and dhcp6 settings are correct
+sudo sed -i '/dhcp4:/d' $CONFIG_FILE
+sudo sed -i '/set-name: enp3s0/a \ \ \ \ \ \ \ \ dhcp4: true' $CONFIG_FILE
+sudo sed -i '/dhcp6:/d' $CONFIG_FILE
+sudo sed -i '/dhcp4: true/a \ \ \ \ \ \ \ \ dhcp6: false' $CONFIG_FILE
 
-# Extract the prefix and subnet size
-prefix=${subnet%/*}
-subnet_size=${subnet#*/}
+# Ensure the addresses array exists under enp3s0
+if ! grep -q "addresses:" $CONFIG_FILE; then
+    sudo sed -i '/set-name: enp3s0/a \ \ \ \ \ \ \ \ addresses: []' $CONFIG_FILE
+fi
 
 # Generate random IPv6 addresses within the given subnet
 addresses=()
@@ -61,8 +62,7 @@ for ((i=0; i<count; i++)); do
     addresses+=("$prefix$part1:$part2:$part3:$part4/64")
 done
 
-# Add each address to the configuration file
-echo "Adding addresses to the Netplan configuration..."
+# Add each address to the configuration file under the correct section
 for addr in "${addresses[@]}"
 do
     sudo sed -i "/addresses:/a \ \ \ \ \ \ \ \ \ \ \ \ - \"$addr\"" $CONFIG_FILE
