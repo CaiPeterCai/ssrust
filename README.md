@@ -12,7 +12,9 @@ bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/ss-r
 ```
 bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/hy2.sh)
 ```
-
+```
+bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/query_ips.sh)
+```
 已测试系统如下：
 
 Debian 9, 10, 11
