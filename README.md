@@ -15,6 +15,9 @@ bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/hy2.
 ```
 bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/query_ips.sh)
 ```
+```
+bash <(curl -L -s https://raw.githubusercontent.com/getsomecat/Snell/master/snell_test.sh)
+```
 已测试系统如下：
 
 Debian 9, 10, 11
