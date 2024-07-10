@@ -8,6 +8,9 @@
 ```
 bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/ss-rust.sh)
 ```
+```
+bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/sslink.sh)
+```
 
 ```
 bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/hy2.sh)
