@@ -9,6 +9,9 @@
 bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/ss-rust.sh)
 ```
 ```
+bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/refs/heads/main/IPv6_Check_Ver2.sh)
+```
+```
 bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/refs/heads/main/ss-link-generator.sh)
 ```
 ```
