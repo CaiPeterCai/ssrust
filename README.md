@@ -6,26 +6,29 @@
 运行脚本：
 
 ```
-bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/ss-rust.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/ss-rust.sh)
 ```
 ```
-bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/refs/heads/main/IPv6_Check_Ver2.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/xykt/RegionRestrictionCheck/main/check.sh)
 ```
 ```
-bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/refs/heads/main/ss-link-generator.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/refs/heads/main/IPv6_Check_Ver2.sh)
 ```
 ```
-bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/sslink.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/refs/heads/main/ss-link-generator.sh)
+```
+```
+bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/sslink.sh)
 ```
 
 ```
-bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/hy2.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/hy2.sh)
 ```
 ```
-bash <(curl -L -s https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/query_ips.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/query_ips.sh)
 ```
 ```
-bash <(curl -L -s https://raw.githubusercontent.com/getsomecat/Snell/master/snell_test.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/getsomecat/Snell/master/snell_test.sh)
 ```
 已测试系统如下：
 
