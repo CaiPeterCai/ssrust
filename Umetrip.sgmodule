@@ -1,0 +1,24 @@
+#!name=Umetrip (航旅纵横) Remove Ads
+#!desc=去除航旅纵横广告
+
+[Map Local]
+# ---- Primary (official OSS) ----
+^https?:\/\/oss\.umetrip\.com\/fs\/advert\/polite.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/oss\.umetrip\.com\/fs\/advert\/.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# ---- Ali CDN mirror of the same bucket ----
+^https?:\/\/ossgw\.alicdn\.com\/.*\/fs\/advert\/polite.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/ossgw\.alicdn\.com\/.*\/fs\/advert\/.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# ---- mPaaS (Ali) possible splash delivery paths (conservative) ----
+^https?:\/\/(?:[a-z0-9.-]+\.)?aliyuncs\.com\/.*/advert\/.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/(?:[a-z0-9.-]+\.)?aliyuncs\.com\/.*/ads?\/.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# ---- Legacy API ad endpoints ----
+^https?:\/\/api\.umetrip\.com\/api\/(ad|advert)\/.* data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% oss.umetrip.com, api.umetrip.com, ossgw.alicdn.com, *.aliyuncs.com
