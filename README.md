@@ -9,6 +9,9 @@
 bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/ss-rust.sh)
 ```
 ```
+bash <(curl -fsSL https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/refs/heads/v2/gost.sh)
+```
+```
 bash <(curl -fsSL https://raw.githubusercontent.com/xykt/RegionRestrictionCheck/main/check.sh)
 ```
 ```
