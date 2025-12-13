@@ -12,6 +12,9 @@ bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/ss-r
 bash <(curl -fsSL https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/refs/heads/v2/gost.sh)
 ```
 ```
+bash <(curl -fsSL https://hub.gitmirror.com/https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/refs/heads/v2/gost.sh)
+```
+```
 bash <(curl -fsSL https://raw.githubusercontent.com/xykt/RegionRestrictionCheck/main/check.sh)
 ```
 ```
