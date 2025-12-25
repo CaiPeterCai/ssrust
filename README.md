@@ -9,6 +9,9 @@
 bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/ss-rust.sh)
 ```
 ```
+bash <(curl -fsSL https://raw.githubusercontent.com/babywbx/Uninstall-aliyun-service/master/UAS.sh)
+```
+```
 bash <(curl -fsSL https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/refs/heads/v2/gost.sh)
 ```
 ```
