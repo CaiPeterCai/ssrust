@@ -9,10 +9,13 @@
 bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/ss-rust.sh)
 ```
 ```
-bash <(curl -fsSL https://raw.githubusercontent.com/babywbx/Uninstall-aliyun-service/master/UAS.sh)
+bash <(curl -fsSL https://us.arloor.dev/https://raw.githubusercontent.com/babywbx/Uninstall-aliyun-service/refs/heads/main/UAS.sh)
 ```
 ```
 bash <(curl -fsSL https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/refs/heads/v2/gost.sh)
+```
+```
+bash <(curl -fsSL https://us.arloor.dev/https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/refs/heads/v2/gost.sh)
 ```
 ```
 bash <(curl -fsSL https://hub.gitmirror.com/https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/refs/heads/v2/gost.sh)
