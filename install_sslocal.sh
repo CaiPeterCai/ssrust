@@ -72,8 +72,7 @@ prompt_inputs() {
     SS_SERVER="$(prompt_required "请输入服务器 IP 或域名")"
     SS_SERVER_PORT="$(prompt_port)"
     SS_PASSWORD="$(prompt_required "请输入密码")"
-    read -r -p "请输入加密方式 [chacha20-ietf-poly1305]: " SS_METHOD
-    SS_METHOD="${SS_METHOD:-chacha20-ietf-poly1305}"
+    SS_METHOD="$(prompt_required "请输入加密方式 (例如 chacha20-ietf-poly1305 / aes-256-cfb / aes-256-gcm)")"
 }
 
 install_sslocal() {
@@ -90,7 +89,7 @@ install_sslocal() {
     tarball="shadowsocks-${version}.${ARCH}-unknown-linux-gnu.tar.xz"
     url="https://github.com/shadowsocks/shadowsocks-rust/releases/download/${version}/${tarball}"
     tmpdir="$(mktemp -d)"
-    trap 'rm -rf "${tmpdir}"' EXIT
+    trap "rm -rf '${tmpdir}'" EXIT
 
     wget -qO "${tmpdir}/${tarball}" "${url}"
     tar -xJf "${tmpdir}/${tarball}" -C "${tmpdir}"
@@ -147,10 +146,15 @@ start_service() {
 }
 
 show_result() {
+    local server_display="${SS_SERVER}"
+    if [[ "${server_display}" == *:* && "${server_display}" != \[*\] ]]; then
+        server_display="[${server_display}]"
+    fi
+
     echo
     echo "sslocal 安装并启动完成"
     echo "本地 SOCKS5 监听: ${LOCAL_ADDRESS}:${LOCAL_PORT}"
-    echo "远端服务器: ${SS_SERVER}:${SS_SERVER_PORT}"
+    echo "远端服务器: ${server_display}:${SS_SERVER_PORT}"
     echo "加密方式: ${SS_METHOD}"
     echo "配置文件: ${SS_CONFIG}"
     echo "服务管理:"
