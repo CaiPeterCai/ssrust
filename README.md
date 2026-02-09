@@ -9,6 +9,9 @@
 bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/main/ss-rust.sh)
 ```
 ```
+bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/refs/heads/main/install_sslocal.sh)
+```
+```
 bash <(curl -fsSL https://nxtrace.org/nt)
 ```
 ```
