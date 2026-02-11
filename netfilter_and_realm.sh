@@ -5,7 +5,7 @@
 # IPv6: realm 用户态转发 (轻量高性能)
 #
 # 适用: Ubuntu 22.04 / 24.04 全新机器
-# 用法: bash setup.sh
+# 用法: bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/refs/heads/main/netfilter_and_realm.sh)
 # ============================================================
 set -e
 
