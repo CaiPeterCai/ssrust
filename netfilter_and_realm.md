@@ -86,7 +86,7 @@ use_udp = true
 - 远端端口
 
 ```bash
-bash setup.sh
+bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/refs/heads/main/netfilter_and_realm.sh)
 ```
 
 运行效果：
