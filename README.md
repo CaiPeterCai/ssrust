@@ -21,6 +21,9 @@ bash <(curl -fsSL https://us.arloor.dev/https://raw.githubusercontent.com/babywb
 bash <(curl -fsSL https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/refs/heads/v2/gost.sh)
 ```
 ```
+bash <(curl -fsSL https://raw.githubusercontent.com/CaiPeterCai/ssrust/refs/heads/main/netfilter_and_realm.sh)
+```
+```
 bash <(curl -fsSL https://us.arloor.dev/https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/refs/heads/v2/gost.sh)
 ```
 ```
